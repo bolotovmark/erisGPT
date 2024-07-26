@@ -66,7 +66,7 @@ namespace erisGPT.Data
 
 
 
-            StreamReader reader = new StreamReader(Environment.CurrentDirectory + @"\context.txt");
+            StreamReader reader = new StreamReader(Environment.CurrentDirectory + @"/context.txt");
 
             _responseBody.prompt = text;
             _responseBody.model = model;
