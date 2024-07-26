@@ -8,22 +8,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01899a65-cc37-4d1e-a988-54ab55ee8cf0" name="Changes" comment="Оригинальный проект от Кости">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.erisGPT/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.erisGPT/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.erisGPT/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="01899a65-cc37-4d1e-a988-54ab55ee8cf0" name="Changes" comment="Запуск под net7.0&#10;&#10;erisGPT.csproj&#10;- &lt;TargetFramework&gt; -&gt; net7.0&#10;-  &lt;PackageReference Include=&quot;Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation&quot; Version= -&gt; 7.0.0&#10;&#10;ChatHub.cs&#10;- Смена косой черты под другую ОС&#10;&#10;launchSettings.json&#10;- Смена занятого порта с 5000 на не занятый - 4999">
+      <change afterPath="$PROJECT_DIR$/erisGPT/wwwroot/img/attachment-svgrepo-com.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/erisGPT/wwwroot/img/send-02-svgrepo-com.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.erisGPT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.erisGPT/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erisGPT/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/erisGPT/Views/Home/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erisGPT/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/erisGPT/wwwroot/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erisGPT/wwwroot/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/erisGPT/wwwroot/favicon.ico" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DpaMonitoringSettings">
+    <option name="autoShow" value="false" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="985adf85-6bd6-4a5b-a427-a208292d1922" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Users/markbolotov/Desktop/GPT/erisGPT/Data/ChatHub.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/markbolotov/Desktop/GPT/erisGPT/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/markbolotov/Desktop/GPT/erisGPT/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/markbolotov/Desktop/GPT/erisGPT/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo"><![CDATA[{
@@ -38,7 +49,7 @@
   "keyToString": {
     ".NET Launch Settings Profile.erisGPT.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "net7.0",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -84,7 +95,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1721962863949</updated>
-      <workItem from="1721962865066" duration="1374000" />
+      <workItem from="1721962865066" duration="15064000" />
     </task>
     <task id="LOCAL-00001" summary="Оригинальный проект от Кости">
       <option name="closed" value="true" />
@@ -94,7 +105,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721963061237</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Запуск под net7.0&#10;&#10;erisGPT.csproj&#10;- &lt;TargetFramework&gt; -&gt; net7.0&#10;-  &lt;PackageReference Include=&quot;Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation&quot; Version= -&gt; 7.0.0&#10;&#10;ChatHub.cs&#10;- Смена косой черты под другую ОС&#10;&#10;launchSettings.json&#10;- Смена занятого порта с 5000 на не занятый - 4999">
+      <option name="closed" value="true" />
+      <created>1721964833872</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1721964833872</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +135,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Оригинальный проект от Кости" />
-    <option name="LAST_COMMIT_MESSAGE" value="Оригинальный проект от Кости" />
+    <MESSAGE value="Запуск под net7.0&#10;&#10;erisGPT.csproj&#10;- &lt;TargetFramework&gt; -&gt; net7.0&#10;-  &lt;PackageReference Include=&quot;Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation&quot; Version= -&gt; 7.0.0&#10;&#10;ChatHub.cs&#10;- Смена косой черты под другую ОС&#10;&#10;launchSettings.json&#10;- Смена занятого порта с 5000 на не занятый - 4999" />
+    <option name="LAST_COMMIT_MESSAGE" value="Запуск под net7.0&#10;&#10;erisGPT.csproj&#10;- &lt;TargetFramework&gt; -&gt; net7.0&#10;-  &lt;PackageReference Include=&quot;Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation&quot; Version= -&gt; 7.0.0&#10;&#10;ChatHub.cs&#10;- Смена косой черты под другую ОС&#10;&#10;launchSettings.json&#10;- Смена занятого порта с 5000 на не занятый - 4999" />
   </component>
 </project>

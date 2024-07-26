@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Левша AI";
     
 }
 
@@ -30,9 +30,9 @@
             </div>
         </div>
         <div class="bottom-panel">
-
+            <div class="bottom_button" id="sendMessage2"><img class="icon" src="img/attachment-svgrepo-com.svg" alt="dots icon"></div>
             <input class="input-text" type="text" />
-            <div id="sendMessage"><span>Отправить</span></div>
+            <div class="bottom_button" id="sendMessage"><span>Отправить</span></div>
 
         </div>
     </div>
@@ -46,9 +46,35 @@
 </div>
 
 
+<!--import lib parse MarkDown -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js" integrity="sha512-LhccdVNGe2QMEfI3x4DVV3ckMRe36TfydKss6mJpdHjNFiV07dFpS2xzeZedptKZrwxfICJpez09iNioiSZ3hA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
+    var output_text = "";
+    let listImg = [];
+    let listImgChat = [];
 
+    var converter = new showdown.Converter();
+    converter.setOption('tables', true);
+    converter.setOption('strikethrough', true)
+    converter.setOption('tablesHeaderId', true)
+
+    $('#formFileMultiple').on('change', function (event) {
+        listImg = [];
+        listImgChat = [];
+        const files = event.target.files;
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const base64String = e.target.result;
+                const base64StringReplace = base64String.replace(/^data:.*;base64,/, '');
+                listImg.push(base64StringReplace);
+                listImgChat.push(base64String);
+            };
+            reader.readAsDataURL(file);
+        }
+    });
 
     $('#model-changer .btn').on('click', function () {
 
@@ -66,7 +92,7 @@
 
 
     $(document).on('keypress', function (e) {
-        if (e.which == 13) {
+        if (e.which === 13) {
             SendMsg();
         }
     });
@@ -91,7 +117,34 @@
 
             $('#sendMessage').html('Отправить');
             $('.input-text').attr('readonly', false);
+
+
+            console.log(output_text.replace(/<br>/g, "\n"));
+            
+            let html = converter.makeHtml(output_text.replace(/<br>/g, "\n"));
+
+            $('.text .message-bot').last().html(html);
+
+            output_text = "";
         }
+        else {
+            if ($('.text .message-bot').last().html() === '...')
+                $('.text .message-bot').last().html('');
+
+
+
+
+
+            output_text = output_text + data;
+            $('.text .message-bot').last().html($('.text .message-bot').last().html() + data);
+
+            let html = converter.makeHtml(output_text.replace(/<br>/g, "\n"));
+
+            $('.text .message-bot').last().html(html);
+
+            document.getElementById('text').scrollTo(0, $('#text').prop('scrollHeight'));
+        }
+        
 
 
 
@@ -101,40 +154,7 @@
         //    return;
         //}
 
-        if ($('.text .message-bot').last().html() == '...')
-            $('.text .message-bot').last().html('');
-
-      
-      
-
-
-        $('.text .message-bot').last().html($('.text .message-bot').last().html() + data);
-
-     
-
-        if ($('.text .message-bot').last().html().includes('```')) {
-
-            var text = $('.text .message-bot').last().html();
-
-            console.log(text);
-
-            if (isNotFirstTag) {
-
-                text = text.replace('```', '</code>');
-                isNotFirstTag = false;
-            }
-            else {
-                text = text.replace('```', '<code>');
-                isNotFirstTag = true;
-            }
-
-
-            $('.text .message-bot').last().html(text);
-        }
-
-
-
-        document.getElementById('text').scrollTo(0, $('#text').prop('scrollHeight'));
+        
 
     });
 
