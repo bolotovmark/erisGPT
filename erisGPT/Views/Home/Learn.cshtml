@@ -1,0 +1,192 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    
+}
+
+
+<input type="hidden" id="main-url" value="@ViewBag.MainUrl">
+<input type="hidden" id="user-uid" value="@ViewBag.Uid">
+
+
+<div class="bg">
+
+    <div class="bg-dark header">
+        <img class="logo" src="~/img/logo.png">
+    </div>
+
+
+
+
+    <div class="centered">
+        <div class="text-group">
+            <div class="text-container">
+                <div class="text " id="text" style="overflow-y:auto;">
+
+
+                </div>
+            </div>
+
+            <div class="status">
+            </div>
+        </div>
+        <div class="bottom-panel">
+
+            <input class="input-text" type="text" />
+            <div id="sendMessage"><span>Отправить</span></div>
+
+        </div>
+    </div>
+
+    <img class="master" src="~/img/master.png" />
+    <form style="display:none;" id="params">
+        <input type="text" name="prompt" value="" />
+    </form>
+
+
+</div>
+
+
+
+<script>
+
+
+    $('#model-changer .btn').on('click', function () {
+
+        $('#model-changer .btn').removeClass('btn-secondary');
+        $('#model-changer .btn').addClass('btn-outline-secondary');
+        $(this).removeClass('btn-outline-secondary');
+        $(this).addClass('btn-secondary');
+    });
+
+
+    $('#sendMessage').on('click', function () {
+        SendMsg();
+    });
+
+
+
+    $(document).on('keypress', function (e) {
+        if (e.which == 13) {
+            SendMsg();
+        }
+    });
+
+
+
+    hubConnection.on("EditOn", (data) => {
+
+
+    });
+
+
+    var isNotFirstTag = false;
+
+    hubConnection.on("Update", (data, isDone) => {
+
+
+
+
+        if (isDone) {
+            stopTimer();
+
+            $('#sendMessage').html('Отправить');
+            $('.input-text').attr('readonly', false);
+        }
+
+
+
+        //if (data == '') {
+        //    $('.text .message-bot').last().html("<span style='color:red;'>Ошибка выполнения запроса к серверу!</span>");
+        //    document.getElementById('text').scrollTo(0, $('#text').prop('scrollHeight'));
+        //    return;
+        //}
+
+        if ($('.text .message-bot').last().html() == '...')
+            $('.text .message-bot').last().html('');
+
+      
+      
+
+
+        $('.text .message-bot').last().html($('.text .message-bot').last().html() + data);
+
+     
+
+        if ($('.text .message-bot').last().html().includes('```')) {
+
+            var text = $('.text .message-bot').last().html();
+
+            console.log(text);
+
+            if (isNotFirstTag) {
+
+                text = text.replace('```', '</code>');
+                isNotFirstTag = false;
+            }
+            else {
+                text = text.replace('```', '<code>');
+                isNotFirstTag = true;
+            }
+
+
+            $('.text .message-bot').last().html(text);
+        }
+
+
+
+        document.getElementById('text').scrollTo(0, $('#text').prop('scrollHeight'));
+
+    });
+
+
+
+
+
+    function SendMsg() {
+
+        if ($('.input-text').val() == '') {
+            return;
+        }
+
+
+        var messages = [];
+
+        $('.message-user, .message-bot').each(function () {
+            if ($(this).hasClass('message-user')) {
+                messages.push({ role: 'user', content: $(this).text() });
+            }
+            else {
+                messages.push({ role: 'assistant', content: $(this).text() });
+
+            }
+        });
+        $('#sendMessage').html('<div class="spinner-border" role="status"><span class= "sr-only"> Loading...</span ></div >');
+
+
+
+        $('.text').append('<div class="container-user"><div ></div><div class="message-user">' + $('.input-text').val() + '</div></div>');
+        $('.text').append('<div class="container-bot"><div class="message-bot">...</div><div></div></div>');
+
+        var text = $('.input-text').val();
+        $('.input-text').val('');
+
+
+        $('.input-text').attr('readonly', true);
+
+        document.getElementById('text').scrollTo(0, $('#text').prop('scrollHeight'));
+
+        startTimer();
+
+        var model = 'llama3:80b';
+
+        hubConnection.invoke("SendUpdate", text, model, JSON.stringify(messages), $('#user-uid').val());
+
+    }
+
+
+
+
+
+
+</script>
+

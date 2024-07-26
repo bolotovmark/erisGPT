@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>E:\Projects\erisGPT\erisGPT\bin\Debug\net5.0\publish\</_PublishTargetUrl>
+    <History>True|2024-06-06T10:42:54.3421812Z;True|2024-06-06T14:53:16.6390991+05:00;True|2024-06-05T09:01:51.5542414+05:00;True|2024-06-05T08:45:14.9608864+05:00;True|2024-06-05T08:40:09.7333204+05:00;True|2024-06-05T08:15:37.4158922+05:00;False|2024-06-05T08:15:06.8757586+05:00;True|2024-03-15T15:33:10.3064544+05:00;True|2024-03-14T17:43:22.0322547+05:00;True|2024-03-14T16:59:24.8184955+05:00;True|2024-03-14T16:26:14.5349311+05:00;True|2024-03-14T16:22:24.6208812+05:00;True|2024-03-14T16:18:29.7221919+05:00;</History>
+  </PropertyGroup>
+</Project>
