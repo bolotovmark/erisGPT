@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 using OllamaSharp;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace erisGPT.Models
 {

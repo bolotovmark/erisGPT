@@ -46,7 +46,11 @@ namespace erisGPT
                     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 
-                endpoints.MapHub<ChatHub>("/chat");
+                endpoints.MapHub<ChatHub>("/chat",
+                    options =>
+                    {
+                        options.ApplicationMaxBufferSize = 1024;
+                    });
 
             });
         }

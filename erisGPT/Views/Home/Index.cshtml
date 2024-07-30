@@ -9,204 +9,45 @@
 
 
 <div class="bg">
-
+    
     <div class="bg-dark header">
         <img class="logo" src="~/img/logo.png">
     </div>
 
 
-
-
     <div class="centered">
         <div class="text-group">
             <div class="text-container">
-                <div class="text " id="text" style="overflow-y:auto;">
-
-
+                <div class="text" id="text" style="overflow-y:auto;">
+                    
                 </div>
             </div>
-
-            <div class="status">
-            </div>
         </div>
+
+        
+        <div class="bottom_content_panel">
+            
+        </div>
+        
+        
         <div class="bottom-panel">
-            <div class="bottom_button" id="sendMessage2"><img class="icon" src="img/attachment-svgrepo-com.svg" alt="dots icon"></div>
-            <input class="input-text" type="text" />
+            <div class="bottom_button" id="sendContent"><img class="icon" src="img/attachment-svgrepo-com.svg" alt="dots icon"></div>
+            <input class="input-text" type="text"/>
             <div class="bottom_button" id="sendMessage"><span>Отправить</span></div>
-
         </div>
+        
+        <div class="status">
+            
+        </div>
+        
     </div>
 
-    <img class="master" src="~/img/master.png" />
+
+    <img class="master" src="~/img/master.png" alt="Master"/>
     <form style="display:none;" id="params">
-        <input type="text" name="prompt" value="" />
+        <input type="text" name="prompt" value=""/>
     </form>
-
-
+    <input style="display: none" id="formFileMultiple" type="file" accept="image/png, image/jpeg"/>
+    
+    <script src="js/Chat.js"></script>
 </div>
-
-
-<!--import lib parse MarkDown -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js" integrity="sha512-LhccdVNGe2QMEfI3x4DVV3ckMRe36TfydKss6mJpdHjNFiV07dFpS2xzeZedptKZrwxfICJpez09iNioiSZ3hA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<script>
-    var output_text = "";
-    let listImg = [];
-    let listImgChat = [];
-
-    var converter = new showdown.Converter();
-    converter.setOption('tables', true);
-    converter.setOption('strikethrough', true)
-    converter.setOption('tablesHeaderId', true)
-
-    $('#formFileMultiple').on('change', function (event) {
-        listImg = [];
-        listImgChat = [];
-        const files = event.target.files;
-        for (let i = 0; i < files.length; i++) {
-            const file = files[i];
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                const base64String = e.target.result;
-                const base64StringReplace = base64String.replace(/^data:.*;base64,/, '');
-                listImg.push(base64StringReplace);
-                listImgChat.push(base64String);
-            };
-            reader.readAsDataURL(file);
-        }
-    });
-
-    $('#model-changer .btn').on('click', function () {
-
-        $('#model-changer .btn').removeClass('btn-secondary');
-        $('#model-changer .btn').addClass('btn-outline-secondary');
-        $(this).removeClass('btn-outline-secondary');
-        $(this).addClass('btn-secondary');
-    });
-
-
-    $('#sendMessage').on('click', function () {
-        SendMsg();
-    });
-
-
-
-    $(document).on('keypress', function (e) {
-        if (e.which === 13) {
-            SendMsg();
-        }
-    });
-
-
-
-    hubConnection.on("EditOn", (data) => {
-
-
-    });
-
-
-    var isNotFirstTag = false;
-
-    hubConnection.on("Update", (data, isDone) => {
-
-
-
-
-        if (isDone) {
-            stopTimer();
-
-            $('#sendMessage').html('Отправить');
-            $('.input-text').attr('readonly', false);
-
-
-            console.log(output_text.replace(/<br>/g, "\n"));
-            
-            let html = converter.makeHtml(output_text.replace(/<br>/g, "\n"));
-
-            $('.text .message-bot').last().html(html);
-
-            output_text = "";
-        }
-        else {
-            if ($('.text .message-bot').last().html() === '...')
-                $('.text .message-bot').last().html('');
-
-
-
-
-
-            output_text = output_text + data;
-            $('.text .message-bot').last().html($('.text .message-bot').last().html() + data);
-
-            let html = converter.makeHtml(output_text.replace(/<br>/g, "\n"));
-
-            $('.text .message-bot').last().html(html);
-
-            document.getElementById('text').scrollTo(0, $('#text').prop('scrollHeight'));
-        }
-        
-
-
-
-        //if (data == '') {
-        //    $('.text .message-bot').last().html("<span style='color:red;'>Ошибка выполнения запроса к серверу!</span>");
-        //    document.getElementById('text').scrollTo(0, $('#text').prop('scrollHeight'));
-        //    return;
-        //}
-
-        
-
-    });
-
-
-
-
-
-    function SendMsg() {
-
-        if ($('.input-text').val() == '') {
-            return;
-        }
-
-
-        var messages = [];
-
-        $('.message-user, .message-bot').each(function () {
-            if ($(this).hasClass('message-user')) {
-                messages.push({ role: 'user', content: $(this).text() });
-            }
-            else {
-                messages.push({ role: 'assistant', content: $(this).text() });
-
-            }
-        });
-        $('#sendMessage').html('<div class="spinner-border" role="status"><span class= "sr-only"> Loading...</span ></div >');
-
-
-
-        $('.text').append('<div class="container-user"><div ></div><div class="message-user">' + $('.input-text').val() + '</div></div>');
-        $('.text').append('<div class="container-bot"><div class="message-bot">...</div><div></div></div>');
-
-        var text = $('.input-text').val();
-        $('.input-text').val('');
-
-
-        $('.input-text').attr('readonly', true);
-
-        document.getElementById('text').scrollTo(0, $('#text').prop('scrollHeight'));
-
-        startTimer();
-
-        var model = 'llama3:80b';
-
-        hubConnection.invoke("Send", text, model, JSON.stringify(messages), $('#user-uid').val());
-
-    }
-
-
-
-
-
-
-</script>
-

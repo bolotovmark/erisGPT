@@ -1,6 +1,34 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+.status {
+    padding:5px;
+    color:gray;
+    position:absolute;
+}
+
+.content {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 10%;
+    display: inline-flex;
+}
+
+.bottom_content_panel{
+    background: rgba(0,0,0,0.4);
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    max-width: 250px;
+    width: fit-content;
+    /*width: auto; !* Allows the width to adjust based on the content *!*/
+    /*display: inline-block; !* Ensures the width adjusts based on content *!*/
+}
+
 .bottom_button {
     background: rgba(0,0,0,0.4);
     color: white;
@@ -51,12 +79,12 @@ table {
 }
 
 blockquote{
-    width:60%;
+    width:100%;
     margin:50px auto;
     font-style:italic;
     color: #555555;
     padding:1.2em 30px 1.2em 75px;
-    border-left:8px solid #78C0A8 ;
+    border-left:8px solid #b6c7d7;
     line-height:1.6;
     position: relative;
     background:#EDEDED;
@@ -64,7 +92,7 @@ blockquote{
 
 blockquote::before{
     content: "\201C";
-    color:#78C0A8;
+    color: #b6c7d7;
     position: absolute;
     left: 10px;
     top:-10px;
@@ -222,19 +250,12 @@ body {
 
 .input-text:focus {
     outline:none;
-
 }
 
 .text-group {
 
     display:grid;
     grid-template-rows: 2fr auto;
-}
-.status {
-    padding:5px;
-    color:gray;
-    position:absolute;
-    bottom:55px;
 }
 
 .spinner-grow {

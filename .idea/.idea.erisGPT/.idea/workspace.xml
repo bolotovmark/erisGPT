@@ -8,13 +8,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01899a65-cc37-4d1e-a988-54ab55ee8cf0" name="Changes" comment="Запуск под net7.0&#10;&#10;erisGPT.csproj&#10;- &lt;TargetFramework&gt; -&gt; net7.0&#10;-  &lt;PackageReference Include=&quot;Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation&quot; Version= -&gt; 7.0.0&#10;&#10;ChatHub.cs&#10;- Смена косой черты под другую ОС&#10;&#10;launchSettings.json&#10;- Смена занятого порта с 5000 на не занятый - 4999">
-      <change afterPath="$PROJECT_DIR$/erisGPT/wwwroot/img/attachment-svgrepo-com.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/erisGPT/wwwroot/img/send-02-svgrepo-com.svg" afterDir="false" />
+    <list default="true" id="01899a65-cc37-4d1e-a988-54ab55ee8cf0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/erisGPT/wwwroot/js/Chat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/erisGPT/wwwroot/js/ParseMarkDown.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.erisGPT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.erisGPT/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erisGPT/Data/ChatHub.cs" beforeDir="false" afterPath="$PROJECT_DIR$/erisGPT/Data/ChatHub.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erisGPT/Models/Client.cs" beforeDir="false" afterPath="$PROJECT_DIR$/erisGPT/Models/Client.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erisGPT/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/erisGPT/Startup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/erisGPT/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/erisGPT/Views/Home/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erisGPT/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/erisGPT/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erisGPT/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/erisGPT/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/erisGPT/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/erisGPT/wwwroot/css/site.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/erisGPT/wwwroot/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/erisGPT/wwwroot/favicon.ico" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,48 +28,70 @@
   <component name="DpaMonitoringSettings">
     <option name="autoShow" value="false" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;bolotovmark&quot;
+  }
+}</component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="985adf85-6bd6-4a5b-a427-a208292d1922" />
   </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/bolotovmark/erisGPT.git&quot;,
+    &quot;accountId&quot;: &quot;985adf85-6bd6-4a5b-a427-a208292d1922&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Users/markbolotov/Desktop/GPT/erisGPT/Data/ChatHub.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/markbolotov/Desktop/GPT/erisGPT/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/markbolotov/Desktop/GPT/erisGPT/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/markbolotov/Desktop/GPT/erisGPT/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/markbolotov/Desktop/GPT/erisGPT/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/erisGPT/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/db4ccaf542314990af4359cab3963d4dfa00/a2/d9ee52ce/02000009.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/54a7a3cde9854d3e9e1403a4a5c6a49a7a000/42/cd776a4a/ClientProxyExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/db4ccaf542314990af4359cab3963d4dfa00/3b/341cb818/Chat.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/db4ccaf542314990af4359cab3963d4dfa00/8b/d9104afe/ChatRole.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/db4ccaf542314990af4359cab3963d4dfa00/ac/9c4f4765/OllamaApiClient.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2jlXuwwXrBvRE2P1PiaSvYbV6oZ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.erisGPT.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "net7.0",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.erisGPT.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;net7.0&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/Users/markbolotov/Library/Application Support/JetBrains/Rider2024.1/resharper-host/DecompilerCache",
-      "/Users/markbolotov/Library/Application Support/JetBrains/Rider2024.1/resharper-host/SourcesCache",
-      "/Users/markbolotov/Library/Application Support/Symbols/src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/markbolotov/Library/Application Support/JetBrains/Rider2024.1/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/markbolotov/Library/Application Support/JetBrains/Rider2024.1/resharper-host/SourcesCache&quot;,
+      &quot;/Users/markbolotov/Library/Application Support/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.erisGPT">
     <configuration name="erisGPT: FolderProfile" type="DotNetMsBuildPublish" factoryName="Publish to IIS">
       <riderPublish configuration="Debug" platform="Any CPU" publish_profile="FolderProfile.pubxml" pubxml_path="$PROJECT_DIR$/erisGPT/Properties/PublishProfiles/FolderProfile.pubxml" uuid_high="-4292527890068059145" uuid_low="-7821565695576188073" />
@@ -95,7 +121,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1721962863949</updated>
-      <workItem from="1721962865066" duration="15064000" />
+      <workItem from="1721962865066" duration="25569000" />
+      <workItem from="1722062965306" duration="9877000" />
+      <workItem from="1722156091282" duration="10046000" />
+      <workItem from="1722185831939" duration="5152000" />
+      <workItem from="1722191016682" duration="1946000" />
+      <workItem from="1722221211182" duration="13466000" />
+      <workItem from="1722308067897" duration="3502000" />
     </task>
     <task id="LOCAL-00001" summary="Оригинальный проект от Кости">
       <option name="closed" value="true" />
@@ -113,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721964833872</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="- изменена иконка в закладках&#10;- дополнительная кнопка для вложений&#10;- поддержка разметки MarkDown">
+      <option name="closed" value="true" />
+      <created>1721987875152</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1721987875152</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +176,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Оригинальный проект от Кости" />
     <MESSAGE value="Запуск под net7.0&#10;&#10;erisGPT.csproj&#10;- &lt;TargetFramework&gt; -&gt; net7.0&#10;-  &lt;PackageReference Include=&quot;Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation&quot; Version= -&gt; 7.0.0&#10;&#10;ChatHub.cs&#10;- Смена косой черты под другую ОС&#10;&#10;launchSettings.json&#10;- Смена занятого порта с 5000 на не занятый - 4999" />
-    <option name="LAST_COMMIT_MESSAGE" value="Запуск под net7.0&#10;&#10;erisGPT.csproj&#10;- &lt;TargetFramework&gt; -&gt; net7.0&#10;-  &lt;PackageReference Include=&quot;Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation&quot; Version= -&gt; 7.0.0&#10;&#10;ChatHub.cs&#10;- Смена косой черты под другую ОС&#10;&#10;launchSettings.json&#10;- Смена занятого порта с 5000 на не занятый - 4999" />
+    <MESSAGE value="- изменена иконка в закладках&#10;- дополнительная кнопка для вложений&#10;- поддержка разметки MarkDown" />
+    <option name="LAST_COMMIT_MESSAGE" value="- изменена иконка в закладках&#10;- дополнительная кнопка для вложений&#10;- поддержка разметки MarkDown" />
   </component>
 </project>
